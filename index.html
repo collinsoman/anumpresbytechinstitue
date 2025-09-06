@@ -3,209 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anum Presbyterian Technical Institute</title>
+    <title>Kerial Tech | Innovative Technology Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Base Styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         :root {
-            --primary: #1a4b8c;
-            --secondary: #c53f3f;
-            --accent: #f39c12;
-            --light: #f5f5f5;
-            --dark: #333;
-            --text: #444;
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --accent: #10b981;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #94a3b8;
+            --transition: all 0.3s ease;
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
         body {
+            background-color: #f1f5f9;
+            color: var(--dark);
             line-height: 1.6;
-            color: var(--text);
-            background-color: #f9f9f9;
-            font-family: 'Open Sans', sans-serif;
         }
-        
-        h1, h2, h3, h4, h5 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-        }
-        
+
         .container {
-            width: 90%;
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
         }
-        
+
         /* Header Styles */
         header {
-            background: linear-gradient(to right, var(--primary), #2a5ba8);
-            color: white;
-            padding: 0.8rem 0;
-            position: sticky;
+            background-color: var(--light);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
         }
-        
-        .header-content {
+
+        .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
         }
-        
-        .logo-img {
-            width: 70px;
-            height: 70px;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
+
+        .logo i {
+            font-size: 32px;
             color: var(--primary);
-            font-weight: bold;
+            margin-right: 10px;
         }
-        
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-        
+
         .logo h1 {
-            font-size: 1.8rem;
-            line-height: 1.2;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--dark);
         }
-        
+
         .logo span {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            color: var(--primary);
         }
-        
-        nav {
-            display: flex;
-            align-items: center;
-        }
-        
-        nav ul {
+
+        .nav-links {
             display: flex;
             list-style: none;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
         }
-        
-        nav a {
-            color: white;
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            padding: 0.5rem;
-            border-radius: 4px;
-            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
         }
-        
-        nav a:hover, nav a.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
+
+        .nav-links a:hover {
+            color: var(--primary);
         }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: var(--transition);
         }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 8rem 0;
-            text-align: center;
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
-        
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
+
         .btn {
             display: inline-block;
-            background: var(--accent);
+            padding: 12px 28px;
+            background-color: var(--primary);
             color: white;
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
-            border: none;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
             cursor: pointer;
-            font-family: 'Montserrat', sans-serif;
-            margin: 0.5rem;
         }
-        
+
         .btn:hover {
-            background: #e67e22;
+            background-color: transparent;
+            color: var(--primary);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
-        
-        .btn-secondary {
-            background: var(--primary);
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
         }
-        
-        .btn-secondary:hover {
-            background: #0d3a73;
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
         }
-        
-        /* Section Styles */
-        section {
-            padding: 5rem 0;
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #e0f2fe 0%, #dbeafe 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 30px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: white;
+        }
+
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title h2::after {
             content: '';
             position: absolute;
@@ -214,622 +218,664 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--accent);
+            background-color: var(--accent);
+            border-radius: 2px;
         }
-        
-        /* Programs Section */
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .program-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-        
-        .program-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .program-img {
-            height: 200px;
-            background-color: #ddd;
-            background-position: center;
-            background-size: cover;
-        }
-        
-        .program-content {
-            padding: 1.5rem;
-        }
-        
-        .program-content h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-img {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            height: 400px;
-            background-color: #ddd;
-            background-position: center;
-            background-size: cover;
-        }
-        
-        .about-text h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Admissions/Portals Section */
-        .portal-section {
-            display: none;
-            padding: 2rem 0;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-        .portal-section.active {
-            display: block;
-        }
-        
-        .form-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus, .form-group select:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        ul { list-style: none; margin-top: 1rem; }
-        li { background: white; padding: 1rem; margin-bottom: 0.5rem; border-radius: 5px; box-shadow: 0 1px 5px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
-        .applicant-item { display: flex; flex-direction: column; }
-        .applicant-item strong { color: var(--primary); }
-        .applicant-item span { font-size: 0.9em; color: var(--text); }
-        .message-box { padding: 1rem; border-radius: 5px; margin-top: 1rem; font-weight: bold; text-align: center; }
-        .message-box.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
-        .message-box.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
-        .result-display { background: #eaf1fa; padding: 1.5rem; border-radius: 8px; border-left: 5px solid var(--primary); }
 
-        /* News Section */
-        .news-grid {
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 20px auto 0;
+        }
+
+        .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 30px;
         }
-        
-        .news-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        .service-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
-        .news-img {
-            height: 200px;
-            background-color: #ddd;
-            background-position: center;
-            background-size: cover;
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
-        .news-content {
-            padding: 1.5rem;
-        }
-        
-        .news-date {
-            color: var(--secondary);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-        
-        .news-content h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* Contact Section */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-        
-        .contact-icon {
-            background: var(--primary);
-            color: white;
-            width: 40px;
-            height: 40px;
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
+            margin: 0 auto 25px;
         }
-        
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+
+        .service-icon i {
+            font-size: 32px;
+            color: white;
         }
-        
-        .form-control {
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .service-card p {
+            color: #64748b;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: linear-gradient(to right, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
             width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-family: 'Open Sans', sans-serif;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
         }
-        
-        textarea.form-control {
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        .features {
+            margin-top: 30px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .feature i {
+            font-size: 24px;
+            color: var(--accent);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            padding: 30px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 25px;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-detail i {
+            font-size: 24px;
+            color: var(--primary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-form {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+
+        .form-group textarea {
             min-height: 150px;
             resize: vertical;
         }
-        
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #dbeafe 0%, #d1d5db 100%);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            background-color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .testimonial-info p {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #475569;
+        }
+
+        .rating {
+            color: #f59e0b;
+            margin-top: 15px;
+        }
+
         /* Footer */
         footer {
-            background: var(--dark);
+            background-color: var(--secondary);
             color: white;
-            padding: 3rem 0 1rem;
+            padding: 70px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            gap: 40px;
+            margin-bottom: 50px;
         }
-        
-        .footer-logo h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: block;
         }
-        
-        .footer-links h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 0.5rem;
+
+        .footer-logo span {
+            color: var(--primary);
         }
-        
-        .footer-links h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
+
+        .footer-about p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
         }
-        
-        .footer-links ul {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--accent);
-        }
-        
-        .social-icons {
+
+        .social-links {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 15px;
         }
-        
-        .social-icon {
-            display: inline-flex;
+
+        .social-links a {
+            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background-color: #334155;
             border-radius: 50%;
             color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .footer-links h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #cbd5e1;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: var(--transition);
         }
-        
-        .social-icon:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
         }
-        
+
         .copyright {
             text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: #aaa;
+            padding-top: 30px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
         }
-        
-        /* Responsive Styles */
+
+        /* Responsive Design */
         @media (max-width: 992px) {
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-img {
-                order: -1;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .header-content {
+            .hero-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 1rem;
             }
             
-            .logo {
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+            
+            .hero-btns {
                 justify-content: center;
             }
             
-            nav ul {
+            .about-content {
                 flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
             }
-            
-            .mobile-menu-btn {
-                display: block;
-                position: absolute;
-                top: 1rem;
-                right: 1rem;
-            }
-            
-            .mobile-menu {
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
                 display: none;
-                width: 100%;
-                text-align: center;
             }
             
-            .mobile-menu.active {
-                display: block;
+            .hero-text h2 {
+                font-size: 2.5rem;
             }
             
-            .hero h2 {
+            .section-title h2 {
                 font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 1rem;
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
     <header>
-        <div class="container header-content">
-            <div class="logo">
-                <div class="logo-img">APTI</div>
-                <div class="logo-text">
-                    <h1>ANUM PRESBYTERIAN<br>TECHNICAL INSTITUTE</h1>
-                    <span>Service and Sacrifice</span>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-microchip"></i>
+                    <h1>Oman<span>Tech</span></h1>
                 </div>
-            </div>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav id="mobileMenu">
-                <ul>
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#programs" class="nav-link">Programs</a></li>
-                    <li><a href="#admissions-portal" class="nav-link">Admissions & Portal</a></li>
-                    <li><a href="#news" class="nav-link">News</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+                <a href="#contact" class="btn">Get Started</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="container hero-content">
-            <h2>Developing Practical Skills for a Prosperous Future</h2>
-            <p>Committed to hands-on, quality technical education that empowers students for success in various trades.</p>
-            <a href="#programs" class="btn">Explore Programs</a>
-            <a href="#admissions-portal" class="btn btn-secondary">Apply Now</a>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Innovative Technology Solutions for Your Business</h2>
+                    <p>Kerial Tech provides cutting-edge IT solutions, cloud services, and cybersecurity to help your business thrive in the digital age.</p>
+                    <div class="hero-btns">
+                        <a href="#services" class="btn">Explore Services</a>
+                        <a href="#contact" class="btn btn-outline">Contact Us</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500&q=80" alt="Technology Solutions">
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="about">
+    <!-- Services Section -->
+    <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>About Us</h2>
+                <h2>Our Services</h2>
+                <p>We provide comprehensive technology solutions tailored to your business needs</p>
             </div>
+            <div class="services-grid">
+                <div class="service-card">
+                   <img src="ase.jpg" alt="">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Solutions</h3>
+                    <p>Secure and scalable cloud infrastructure, migration services, and cloud management for your business applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Comprehensive security solutions including threat detection, vulnerability assessment, and data protection.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>IT Infrastructure</h3>
+                    <p>Design, implementation, and management of robust IT infrastructure for optimal business performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>App Development</h3>
+                    <p>Custom mobile and web applications designed to enhance your business operations and customer experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Transform your data into actionable insights with our advanced analytics and business intelligence solutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>IT Support</h3>
+                    <p>24/7 technical support and managed services to keep your systems running smoothly at all times.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
             <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=500&q=80" alt="About Kerial Tech">
+                </div>
                 <div class="about-text">
-                    <h3>A Legacy of Skill and Innovation.</h3>
-                    <p>Anum Presbyterian Technical Institute (APTI), located in the Asuogyaman District of the Eastern Region, is a premier institution dedicated to vocational and technical education. Our school’s motto, "Service and Sacrifice," guides our commitment to training disciplined and skilled professionals who are ready to contribute to Ghana's development.</p>
-                    <p>We provide a dynamic learning environment supported by workshops and state-of-the-art labs for all our courses. Our programs are designed to be hands-on, ensuring that every student graduates with the practical expertise and confidence needed to excel in their chosen trade.</p>
-                </div>
-                <div class="about-img" style="background-image: url('https://images.unsplash.com/photo-1542810634-71277d353683?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="programs">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Technical Programs</h2>
-                <p>We offer specialized, hands-on training to prepare students for successful careers in skilled trades.</p>
-            </div>
-            
-            <div class="programs-grid">
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1579621970563-fa012d2018c5?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Computer & Software Technology</h3>
-                        <p>Learn hardware repair, network administration, and software development in a practical environment.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1634928014563-125d8098317a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Plumbing & Gas Fitting Technology</h3>
-                        <p>Master the installation and maintenance of modern plumbing and gas systems for a high-demand trade.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1582264871239-659728b1227f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Fashion Design</h3>
-                        <p>From sketching to garment production, this course covers all aspects of the fashion industry.</p>
-                    </div>
-                </div>
-                 <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1551632436-1718-4780?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Catering & Hospitality</h3>
-                        <p>Develop culinary expertise and learn the fundamentals of hotel and restaurant management.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1549923746-c502d488b0f7?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Business Secretarial</h3>
-                        <p>Master administrative skills, office management, and business communication for a corporate role.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1621980862089-9a70ac62e22c?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Building & Construction Technology</h3>
-                        <p>Get hands-on training in construction techniques, from foundation work to advanced building systems.</p>
-                    </div>
-                </div>
-                <div class="program-card">
-                    <div class="program-img" style="background-image: url('https://images.unsplash.com/photo-1617478142962-e61e6807204e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="program-content">
-                        <h3>Electrical Engineering Technology</h3>
-                        <p>Learn to design, install, and maintain electrical systems and power generation for a dynamic career.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="admissions-portal">
-        <div class="container">
-            <div class="section-title">
-                <h2>Admissions & Student Portal</h2>
-                <p>Apply for admission or check your results here.</p>
-            </div>
-            
-            <nav>
-                <ul style="justify-content: center; margin-bottom: 2rem;">
-                    <li><a href="#" class="portal-nav-link active" data-portal="admission">Admission Form</a></li>
-                    <li><a href="#" class="portal-nav-link" data-portal="resultsAdmin">Admin Portal</a></li>
-                    <li><a href="#" class="portal-nav-link" data-portal="studentPortal">Student Portal</a></li>
-                </ul>
-            </nav>
-
-            <div id="admission" class="portal-section active">
-                <div class="form-card">
-                    <h2><i class="fas fa-file-alt"></i> Admission Form</h2>
-                    <form id="admissionForm">
-                        <div class="form-group"><label for="stuId">Student ID</label><input type="text" id="stuId" placeholder="e.g., APTI2025-001" required /></div>
-                        <div class="form-group"><label for="stuName">Full Name</label><input type="text" id="stuName" placeholder="e.g., Jane Doe" required /></div>
-                        <div class="form-group"><label for="stuEmail">Email Address</label><input type="email" id="stuEmail" placeholder="e.g., jane.doe@example.com" required /></div>
-                        <div class="form-group">
-                            <label for="stuProgram">Program</label>
-                            <select id="stuProgram" required>
-                                <option value="">Select a Program</option>
-                                <option value="Computer and Software Technology">Computer and Software Technology</option>
-                                <option value="Plumbing and Gas Fitting Technology">Plumbing and Gas Fitting Technology</option>
-                                <option value="Fashion Design">Fashion Design</option>
-                                <option value="Catering and Hospitality">Catering and Hospitality</option>
-                                <option value="Business Secretarial">Business Secretarial</option>
-                                <option value="Building and Construction Technology">Building and Construction Technology</option>
-                                <option value="Electrical Engineering Technology">Electrical Engineering Technology</option>
-                            </select>
+                    <h2>About Oman Tech</h2>
+                    <p>Founded in 2015, Kerial Tech has been at the forefront of providing innovative technology solutions to businesses across various industries. Our team of experienced professionals is dedicated to helping our clients leverage technology for growth and success.</p>
+                    <p>We believe in building long-term partnerships with our clients, understanding their unique challenges, and delivering customized solutions that drive real business value.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Industry Expertise</h3>
+                                <p>Deep knowledge across multiple sectors including finance, healthcare, and retail.</p>
+                            </div>
                         </div>
-                        <button type="submit" class="btn">Apply Now</button>
-                    </form>
-                    <div id="admissionMessage" class="message-box" style="display:none;"></div>
-                    <h3><i class="fas fa-users"></i> Applicants</h3>
-                    <ul id="applicantList"></ul>
-                </div>
-            </div>
-
-            <div id="resultsAdmin" class="portal-section">
-                <div class="form-card">
-                    <h2><i class="fas fa-users-cog"></i> Admin Portal: Assign Results</h2>
-                    <form id="assignForm">
-                        <div class="form-group"><label for="resStuId">Student ID</label><input type="text" id="resStuId" placeholder="e.g., APTI2025-001" required /></div>
-                        <div class="form-group"><label for="resScore">Score / Grade</label><input type="text" id="resScore" placeholder="e.g., Distinction, A, Pass" required /></div>
-                        <button type="submit" class="btn">Assign Result</button>
-                    </form>
-                    <div id="assignMessage" class="message-box" style="display:none;"></div>
-                    <h3><i class="fas fa-list-ul"></i> Student Records</h3>
-                    <ul id="allStudentsResults"></ul>
-                </div>
-            </div>
-
-            <div id="studentPortal" class="portal-section">
-                <div class="form-card">
-                    <h2><i class="fas fa-user-check"></i> Student Portal: Check Your Result</h2>
-                    <form id="lookupForm">
-                        <div class="form-group"><label for="lookupId">Enter Your Student ID</label><input type="text" id="lookupId" placeholder="e.g., APTI2025-001" required /></div>
-                        <button type="submit" class="btn">View Result</button>
-                    </form>
-                    <div id="resultDisplay" class="result-display" style="display:none;"></div>
-                    <div id="lookupMessage" class="message-box" style="display:none;"></div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Certified Professionals</h3>
+                                <p>Our team holds certifications from leading technology providers.</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Customer-Centric Approach</h3>
+                                <p>We prioritize your business goals and deliver solutions that matter.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="news">
+    <!-- Testimonials Section -->
+    <section class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2>Latest News & Events</h2>
-                <p>Stay up-to-date with our latest happenings and achievements.</p>
+                <h2>Client Testimonials</h2>
+                <p>See what our clients say about our services</p>
             </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e087561917a1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="news-content">
-                        <p class="news-date">SEPTEMBER 5, 2025</p>
-                        <h3>APTI Excels in NVTI Exams</h3>
-                        <p>Our students achieved outstanding results in the latest National Vocational Training Institute (NVTI) examinations.</p>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h4>Regina Ofori</h4>
+                            <p>CTO, TechGlobal Inc.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Kerial Tech transformed our IT infrastructure with their cloud solutions. Their team's expertise and dedication helped us achieve 40% cost savings while improving system performance."</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
-                <div class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="news-content">
-                        <p class="news-date">AUGUST 28, 2025</p>
-                        <h3>Alumni Spotlight: Kwabena Asare</h3>
-                        <p>We celebrate Kwabena, a graduate of our Electrical Engineering program, for his successful launch of a solar power company.</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">SR</div>
+                        <div class="testimonial-info">
+                            <h4>Juliana Adjei</h4>
+                            <p>Director, FinSecure Ltd.</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"The cybersecurity solutions provided by Kerial Tech have been exceptional. Their proactive approach to threat management has given us peace of mind and significantly reduced risks."</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
                     </div>
                 </div>
-                <div class="news-card">
-                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1542382900-349f2b875189?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
-                    <div class="news-content">
-                        <p class="news-date">AUGUST 15, 2025</p>
-                        <h3>APTI Wins Regional Skills Competition</h3>
-                        <p>Our Plumbing and Fashion Design teams clinched the top spots in the regional vocational skills competition.</p>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="testimonial-info">
+                            <h4>Oman Collins</h4>
+                            <p>CEO, RetailPro Solutions</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        <p>"Working with Oman Tech on our mobile application development was a game-changer. They delivered on time, within budget, and the results exceeded our expectations."</p>
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
         <div class="container">
             <div class="section-title">
                 <h2>Contact Us</h2>
-                <p>We're here to help. Reach out to us with any questions.</p>
+                <p>Reach out to us for inquiries or to discuss your project</p>
             </div>
-            <div class="contact-content">
+            <div class="contact-container">
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Get In Touch</h3>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Our Location</h4>
-                            <p>Anum, Asuogyaman District, Eastern Region, Ghana</p>
+                            <p>123 Tech Park, Innovation District, San Francisco, CA 94103</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone-alt"></i>
                         <div>
-                            <h4>Phone Number</h4>
-                            <p>+233 XX XXX XXXX</p>
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
                         <div>
-                            <h4>Email Address</h4>
-                            <p>info@anumpresbytech.edu.gh</p>
+                            <h4>Email Us</h4>
+                            <p>info@omantech.com</p>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
                         <div>
-                            <h4>Opening Hours</h4>
-                            <p>Mon - Fri: 8:00 AM - 5:00 PM</p>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
                         </div>
-                    </div>
-                    <div class="social-icons">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="contact-form">
                     <form>
-                        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" class="form-control" placeholder="Enter your name" required></div>
-                        <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" class="form-control" placeholder="Enter your email" required></div>
-                        <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" class="form-control" placeholder="Enter subject"></div>
-                        <div class="form-group"><label for="message">Message</label><textarea id="message" class="form-control" placeholder="Enter your message" required></textarea></div>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Enter your message" required></textarea>
+                        </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
                 </div>
@@ -837,33 +883,53 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>APTI</h3>
-                    <p>Committed to excellence since 1897.</p>
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Oman<span>Tech</span></a>
+                    <p>Providing innovative technology solutions to businesses worldwide since 2015. We help companies leverage technology for growth and success.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-links">
-                    <h4>Quick Links</h4>
+                    <h3>Quick Links</h3>
                     <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#programs">Our Programs</a></li>
-                        <li><a href="#admissions-portal">Admissions</a></li>
-                        <li><a href="#news">News & Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>Help & Support</h4>
+                    <h3>Our Services</h3>
                     <ul>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">IT Infrastructure</a></li>
+                        <li><a href="#">App Development</a></li>
+                        <li><a href="#">Data Analytics</a></li>
                     </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and offers.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Anum Presbyterian Technical Institute. All Rights Reserved.</p>
+                <p>&copy; 2023 Oman Tech. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -879,183 +945,24 @@
             });
         });
 
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', () => {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('active');
-        });
-
-        // Highlight active nav link on scroll
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('header nav ul li a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.href.includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Portal section navigation (Admissions, Admin, Student)
-        const portalNavLinks = document.querySelectorAll('.portal-nav-link');
-        const portalSections = document.querySelectorAll('.portal-section');
-
-        portalNavLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetPortal = link.getAttribute('data-portal');
-
-                portalNavLinks.forEach(nav => nav.classList.remove('active'));
-                link.classList.add('active');
-                
-                portalSections.forEach(section => section.classList.remove('active'));
-                document.getElementById(targetPortal).classList.add('active');
-
-                // Reload data for specific sections
-                if (targetPortal === 'admission') loadApplicants();
-                if (targetPortal === 'resultsAdmin') loadAllStudents();
-            });
-        });
-
-        // Data Storage and Portal Logic
-        const applicantList = document.getElementById('applicantList');
-        const allStudentsResults = document.getElementById('allStudentsResults');
-        const admissionForm = document.getElementById('admissionForm');
-        const assignForm = document.getElementById('assignForm');
-        const lookupForm = document.getElementById('lookupForm');
-        
-        const admissionMessage = document.getElementById('admissionMessage');
-        const assignMessage = document.getElementById('assignMessage');
-        const lookupMessage = document.getElementById('lookupMessage');
-
-        // Function to show a message
-        function showMessage(element, message, type) {
-            element.textContent = message;
-            element.className = `message-box ${type}`;
-            element.style.display = 'block';
-            setTimeout(() => { element.style.display = 'none'; }, 5000);
-        }
-
-        // Admission Form Logic
-        admissionForm.addEventListener('submit', function(e) {
+        // Form submission handling
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const studentId = stuId.value.trim();
-            const studentName = stuName.value.trim();
-            const studentEmail = stuEmail.value.trim();
-            const studentProgram = stuProgram.value.trim();
-
-            if (!studentId || !studentName || !studentEmail || !studentProgram) {
-                showMessage(admissionMessage, "All fields are required.", "error");
-                return;
-            }
-            
-            let students = JSON.parse(localStorage.getItem('students') || '[]');
-            
-            if (students.some(s => s.id === studentId)) {
-                showMessage(admissionMessage, `A student with ID ${studentId} already exists.`, "error");
-                return;
-            }
-            
-            const newStudent = {
-                id: studentId,
-                name: studentName,
-                email: studentEmail,
-                program: studentProgram,
-                result: null
-            };
-            
-            students.push(newStudent);
-            localStorage.setItem('students', JSON.stringify(students));
-            
+            alert('Thank you for your message! We will get back to you soon.');
             this.reset();
-            loadApplicants();
-            showMessage(admissionMessage, "Application submitted successfully! Your Student ID is " + studentId, "success");
         });
 
-        function loadApplicants() {
-            const students = JSON.parse(localStorage.getItem('students') || '[]');
-            if (students.length === 0) {
-                applicantList.innerHTML = '<li>No applicants have applied yet.</li>';
-                return;
-            }
-            applicantList.innerHTML = students.map(s => `
-                <li>
-                    <div class="applicant-item">
-                        <strong>${s.id}</strong>
-                        <span>${s.name} - ${s.program}</span>
-                    </div>
-                </li>`).join('');
-        }
-
-        // Admin Assign Results Logic
-        assignForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const id = resStuId.value.trim();
-            const score = resScore.value.trim();
-
-            let students = JSON.parse(localStorage.getItem('students') || '[]');
-            const student = students.find(s => s.id === id);
-
-            if (!student) {
-                showMessage(assignMessage, `Student with ID ${id} not found.`, "error");
-                return;
-            }
-            
-            student.result = score;
-            localStorage.setItem('students', JSON.stringify(students));
-            
-            this.reset();
-            loadAllStudents();
-            showMessage(assignMessage, `Result for ${student.name} assigned successfully.`, "success");
-        });
-        
-        function loadAllStudents() {
-            const students = JSON.parse(localStorage.getItem('students') || '[]');
-            if (students.length === 0) {
-                allStudentsResults.innerHTML = '<li>No student records found.</li>';
-                return;
-            }
-            allStudentsResults.innerHTML = students.map(s => `
-                <li>
-                    <span><strong>${s.id}:</strong> ${s.name}</span>
-                    <small>Result: ${s.result ?? 'Not assigned'}</small>
-                </li>
-            `).join('');
-        }
-
-        // Student Portal Logic
-        lookupForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const id = lookupId.value.trim();
-            const students = JSON.parse(localStorage.getItem('students') || '[]');
-            const student = students.find(s => s.id === id);
-            const display = document.getElementById('resultDisplay');
-            
-            display.style.display = 'none';
-            
-            if (student) {
-                lookupMessage.style.display = 'none';
-                display.innerHTML = `
-                    <p><strong>Name:</strong> ${student.name}</p>
-                    <p><strong>Program:</strong> ${student.program}</p>
-                    <p><strong>Result:</strong> ${student.result ?? 'Result not yet assigned'}</p>
-                `;
-                display.style.display = 'block';
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(248, 250, 252, 0.95)';
             } else {
-                showMessage(lookupMessage, 'No record found for that ID.', 'error');
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+                header.style.background = '#f8fafc';
             }
         });
-
     </script>
 </body>
 </html>
