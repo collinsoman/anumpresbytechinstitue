@@ -921,18 +921,56 @@
                     <h3>Newsletter</h3>
                     <p>Subscribe to our newsletter for the latest updates and offers.</p>
                     <form>
-                        <div class="form-group">
-                            <input type="email" placeholder="Enter your email" required>
-                        </div>
-                        <button type="submit" class="btn">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2023 Oman Tech. All rights reserved.</p>
-            </div>
+           <section class="admissions-form-section" style="padding: 150px 0 100px; background-color: #f1f5f9;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Student Admissions</h2>
+            <p>Fill out the form below to apply to Anum Presbyterian Technical Institute.</p>
         </div>
-    </footer>
+        <div class="contact-form" style="max-width: 800px; margin: 0 auto;">
+            <form action="submit_application.php" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., +233 24 123 4567" required>
+                </div>
+                <div class="form-group">
+                    <label for="program">Program of Interest</label>
+                    <select id="program" name="program" required>
+                        <option value="">-- Select a Program --</option>
+                        <option value="Electricals">Electricals</option>
+                        <option value="Plumbing">Plumbing</option>
+                        <option value="Building Construction">Building Construction</option>
+                        </select>
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="previousSchool">Previous School Attended</label>
+                    <input type="text" id="previousSchool" name="previousSchool" placeholder="Enter your previous school" required>
+                </div>
+                <div class="form-group">
+                    <label for="idCard">Upload ID (e.g., Ghana Card, Passport)</label>
+                    <input type="file" id="idCard" name="idCard" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Why do you want to study at Anum Tech?</label>
+                    <textarea id="message" name="message" placeholder="Tell us why you are a good fit for our institute" required></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Application</button>
+            </form>
+        </div>
+    </div>
+</section>
 
     <script>
         // Smooth scrolling for navigation links
